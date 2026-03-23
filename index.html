@@ -7,112 +7,380 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+        
+        :root {
+            --accent-orange: #f97316;
+            --deep-blue: #1e3a8a;
+        }
+
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+
         .hero-gradient {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('banner.png');
             background-size: cover;
             background-position: center;
         }
+
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+        
+        @keyframes pulse-neon {
+            0%, 100% { text-shadow: 0 0 10px rgba(45, 212, 191, 0.5), 0 0 20px rgba(45, 212, 191, 0.3); opacity: 1; }
+            50% { text-shadow: 0 0 20px rgba(45, 212, 191, 0.8), 0 0 40px rgba(45, 212, 191, 0.5); opacity: 0.9; }
+        }
+        .neon-text {
+            color: #2dd4bf;
+            animation: pulse-neon 3s infinite ease-in-out;
+        }
+
+        .itinerary-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
     </style>
 </head>
-<body class="bg-slate-50 font-sans text-slate-900">
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav class="fixed w-full z-50 glass shadow-sm border-b border-slate-200/50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter text-blue-900">MDM MUGLING</div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#about" class="hover:text-blue-600 transition">The Theme</a>
-                <a href="#itinerary" class="hover:text-blue-600 transition">Itinerary</a>
-                <a href="#booking" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Pre-Book Now</a>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
+                    <span class="text-white text-xs font-bold">M</span>
+                </div>
+                <div class="text-xl font-extrabold tracking-tighter text-blue-900 uppercase">MDM Mugling</div>
+            </div>
+            <div class="hidden md:flex space-x-10 text-sm font-semibold uppercase tracking-widest text-slate-600">
+                <a href="#about" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#itinerary" class="hover:text-blue-600 transition">Schedule</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Packages</a>
+                <a href="#booking" class="bg-orange-500 text-white px-8 py-2.5 rounded-full hover:bg-orange-600 transition shadow-md shadow-orange-200">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4">
-        <div class="max-w-3xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Riverside New Year Escape 2083</h1>
-            <p class="text-xl md:text-2xl mb-8 font-light italic text-blue-100">"Where two rivers meet, Welcome the New Year 2083"</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#booking" class="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-full text-lg font-bold transition transform hover:scale-105">
+    <header class="hero-gradient h-screen flex items-center justify-center text-center text-white px-4 relative overflow-hidden">
+        <div class="max-w-5xl z-10">
+            <div class="inline-block px-4 py-1 border border-orange-400/50 rounded-full mb-6">
+                <span class="uppercase tracking-[0.4em] text-orange-400 font-bold text-xs">30 Chaitra 2082 — 01 Baisakh 2083</span>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 tracking-tight leading-none">
+                Nepal’s <span class="italic text-orange-50 font-serif">Grandest</span>
+            </h1>
+            
+            <div class="relative mb-8">
+                <span class="text-8xl md:text-9xl font-black neon-text tracking-tighter">2083</span>
+            </div>
+
+            <p class="text-xl md:text-2xl mb-12 font-light italic text-blue-100 max-w-2xl mx-auto border-l border-r border-white/20 px-8">
+                "Where the Marsyangdi meets the Trishuli, welcome the New Year."
+            </p>
+
+            <div class="mb-12">
+                <p class="text-xs uppercase tracking-[0.3em] text-blue-300 mb-2">Exclusive Performance by</p>
+                <p class="text-4xl md:text-5xl font-black tracking-widest uppercase italic">DJ Swechchha</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a href="#booking" class="group bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-full text-lg font-bold transition transform hover:scale-105 shadow-xl flex items-center gap-3">
                     RESERVE YOUR SPOT
+                    <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
                 </a>
-                <a href="#itinerary" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-10 py-4 rounded-full text-lg font-bold transition">
-                    VIEW ITINERARY
+                <a href="#itinerary" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-12 py-5 rounded-full text-lg font-bold transition">
+                    VIEW HIGHLIGHTS
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6 text-slate-800">Leave the city behind...</h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
-            Join us at the powerful confluence of two rivers for a celebration like no other. 
-            From acoustic sunsets to midnight sparklers, rinse away the old and embrace the energy of 2083.
-        </p>
-    </section>
-
-    <section id="itinerary" class="py-20 bg-slate-100 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-3xl shadow-xl">
-                    <div class="bg-blue-600 text-white w-20 h-20 rounded-2xl flex flex-center items-center justify-center text-2xl font-bold mb-6 mx-auto md:mx-0">DAY 01</div>
-                    <h3 class="text-2xl font-bold mb-6">Arrival & Celebration</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3"><i class="fas fa-music text-blue-500"></i> Chill Lounge & Acoustic Music</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-users text-blue-500"></i> Welcome Circle & Introduction</li>
-                        <li class="fas fa-fire-alt text-orange-500"></li> Bonfire & BBQ Food Stalls</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-swimmer text-blue-500"></i> Poolside Vibe & Dance Floor</li>
-                    </ul>
-                    <div class="mt-8 border-t pt-6">
-                        <h4 class="font-bold text-orange-600 mb-2 uppercase tracking-widest text-sm">The Midnight Countdown</h4>
-                        <p class="text-slate-600">Champagne Toast • Sparkler Celebration • 12:00 AM Group Shout</p>
-                    </div>
+    <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl font-bold mb-8 text-slate-800 tracking-tight leading-tight">Leave the City <br><span class="text-orange-500">Behind.</span></h2>
+                <p class="text-xl text-slate-600 leading-relaxed mb-8">
+                    Join us for an unforgettable New Year 2083 celebration at Motel Du Mugling. Set at the magical confluence of the Marsyangdi and Trishuli Rivers, we welcome the new year with electrifying music, adventure, and a midnight countdown under the open sky.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Riverside Vibe</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Top Tier DJ</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Adventure Sports</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Luxury Dining</div>
                 </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl border-t-8 border-blue-600">
-                    <div class="bg-slate-800 text-white w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto md:mx-0">DAY 02</div>
-                    <h3 class="text-2xl font-bold mb-6">Renewal & Adventure</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 font-semibold text-blue-700"><i class="fas fa-water"></i> River Dip Challenge (The Purge)</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-th text-blue-500"></i> Beach Gathering & Bingo</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-ship text-blue-500"></i> Rafting, Kayaking & Canyoning</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-umbrella-beach text-blue-500"></i> Riverside Live DJ Set</li>
-                    </ul>
-                    <div class="mt-8 border-t pt-6 flex justify-between items-center text-slate-500 font-medium">
-                        <span>Depart: 4:30 PM</span>
-                        <span class="text-blue-600">Whole Day Activities</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 text-center itinerary-card">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-blue-600 text-xl">
+                        <i class="fas fa-swimmer"></i>
                     </div>
+                    <h3 class="font-bold text-lg mb-2">Midnight Pool Party</h3>
+                    <p class="text-slate-500 text-sm">Dive into 2083 with high-energy sets by DJ Swechchha.</p>
+                </div>
+                <div class="p-8 bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 text-center mt-0 md:mt-12 itinerary-card">
+                    <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-4 text-orange-600 text-xl">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Adventure Phase</h3>
+                    <p class="text-slate-500 text-sm">Rafting, Kayaking, ATV rides, and Canyoning at Jalbire Waterfall.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="booking" class="py-20 px-6 bg-white">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4 text-slate-900">Reserve Your Spot</h2>
-            <p class="text-slate-600 mb-12">Fill out the form below to secure your entry for the New Year 2083 bash.</p>
-            
-            <div class="bg-slate-50 rounded-2xl border-2 border-dashed border-slate-300 p-2 min-h-[600px] flex items-center justify-center relative">
-               <iframe class="airtable-embed" src="https://airtable.com/embed/apptsrp2CzMA3Y1Ni/pag4FTy9WSn3UHa3f/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe> 
-                <!-- <div class="absolute inset-0 flex items-center justify-center bg-white/80 pointer-events-none">
-                     <p class="text-sm font-mono text-slate-500 px-10 text-center">Paste your Airtable Form Shared Link in the iframe 'src' attribute above.</p> -->
-                </div> 
+    <section id="itinerary" class="py-32 bg-slate-900 text-white px-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h2 class="text-5xl font-bold mb-20 text-center">Event Timeline</h2>
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div class="bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-sm">
+                    <div class="flex items-center gap-6 mb-12">
+                        <span class="text-7xl font-black text-blue-500/50">13</span>
+                        <div>
+                            <p class="text-sm uppercase tracking-widest text-slate-400 mb-1">APRIL 2026</p>
+                            <h3 class="text-3xl font-bold italic font-serif">The Celebration Begins</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-10 border-l-2 border-blue-500/30 pl-10 ml-6">
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-blue-500 shadow-[0_0_15px_#3b82f6]"></span>
+                            <span class="text-blue-400 font-bold block text-sm mb-1 uppercase tracking-tighter">09:00 AM</span>
+                            <p class="text-xl font-medium">Departure from Kathmandu</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
+                            <span class="text-blue-400 font-bold block text-sm mb-1 uppercase tracking-tighter">02:00 PM</span>
+                            <p class="text-lg text-slate-300">Arrival & Welcome Lunch at Motel Du Mugling.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
+                            <span class="text-blue-400 font-bold block text-sm mb-1 uppercase tracking-tighter">05:00 PM onwards</span>
+                            <p class="text-lg text-slate-300">Live DJ Set, Poolside relaxation & Bonfire Storytelling.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-orange-500 shadow-[0_0_20px_#f97316]"></span>
+                            <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">12:00 AM</span>
+                            <p class="text-2xl font-bold text-white">✨ MIDNIGHT COUNTDOWN</p>
+                            <p class="text-slate-400 italic">Complimentary Cocktail Toast & Grand Sparkler Celebration</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-sm">
+                    <div class="flex items-center gap-6 mb-12">
+                        <span class="text-7xl font-black text-orange-500/50">14</span>
+                        <div>
+                            <p class="text-sm uppercase tracking-widest text-slate-400 mb-1">APRIL 2026</p>
+                            <h3 class="text-3xl font-bold italic font-serif text-white">Renewal & Adventure</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-10 border-l-2 border-orange-500/30 pl-10 ml-6">
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-blue-400 shadow-[0_0_15px_#60a5fa]"></span>
+                            <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">07:30 AM</span>
+                            <p class="text-xl font-bold">New Year River Dip Challenge</p>
+                            <p class="text-sm text-slate-400 italic">A sacred dip at the confluence of Marsyangdi & Trishuli.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
+                            <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">08:30 AM</span>
+                            <p class="text-lg text-slate-300">Riverside Breakfast with Chill Beach DJ Set.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
+                            <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">11:00 AM</span>
+                            <p class="text-lg text-white font-semibold">Adventure Phase Unleashed</p>
+                            <p class="text-sm text-slate-400">Rafting, Kayaking, ATV Rides & Canyoning at Jalbire Waterfall.</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-500"></span>
+                            <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">04:30 PM</span>
+                            <p class="text-lg text-slate-400">Departure back to Kathmandu</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-      
-      
+        </div>
+    </section>
+
+    <section id="pricing" class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold mb-4 text-center text-slate-800">Choose Your Package</h2>
+            <p class="text-center text-slate-500 mb-20 text-lg">Transparent pricing for the ultimate escape.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-12 rounded-[40px] border border-slate-100 flex flex-col hover:border-slate-300 transition">
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Venue Direct</h4>
+                    <p class="text-4xl font-black mb-8">NPR 3,999</p>
+                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Direct Venue Join</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> All-Night Celebration</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Day 2 Adventure Access</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-times text-slate-300"></i> No Transport Included</li>
+                    </ul>
+                    <a href="#booking" class="text-blue-900 font-bold hover:underline">Select This Plan &rarr;</a>
+                </div>
+                
+                <div class="bg-blue-900 p-12 rounded-[40px] shadow-2xl shadow-blue-200 border-t-8 border-orange-500 flex flex-col transform scale-105 z-10 text-white">
+                    <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-[10px] font-bold absolute -top-4 left-12 tracking-widest uppercase">Best Experience</span>
+                    <h4 class="font-bold text-blue-300 mb-2 uppercase text-xs tracking-[0.2em]">Early Departure</h4>
+                    <p class="text-5xl font-black mb-8">NPR 5,999</p>
+                    <ul class="space-y-5 text-blue-100 mb-12 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fas fa-bus text-orange-400"></i> 09:00 AM Premium Transport</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-utensils text-orange-400"></i> Full Meal Plan (Lunch/Dinner/B-fast)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-bed text-orange-400"></i> Luxury Shared Stay</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-glass-cheers text-orange-400"></i> Free Midnight Cocktail</li>
+                    </ul>
+                    <a href="#booking" class="bg-white text-blue-900 text-center py-4 rounded-full font-bold hover:bg-slate-100 transition">Select Early &rarr;</a>
+                </div>
+                
+                <div class="bg-slate-50 p-12 rounded-[40px] border border-slate-100 flex flex-col hover:border-slate-300 transition">
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Late Departure</h4>
+                    <p class="text-4xl font-black mb-8 text-slate-800">NPR 5,500</p>
+                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fas fa-bus text-blue-500"></i> 04:00 PM Transport</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-bed text-blue-500"></i> Shared Stay Included</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-moon text-blue-500"></i> Midnight Party Access</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-utensils text-blue-500"></i> Dinner & Breakfast</li>
+                    </ul>
+                    <a href="#booking" class="text-blue-900 font-bold hover:underline">Select This Plan &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-32 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <div class="lg:w-2/3">
+                    <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-100">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Secure Your Spot</h2>
+                        <p class="text-slate-500 mb-10 text-lg">Registration Deadline: <strong>05 April 2026</strong>. Spots are limited for the pool party.</p>
+                        <div class="bg-slate-50 rounded-[30px] overflow-hidden border border-slate-200">
+                            <iframe class="airtable-embed" src="https://airtable.com/embed/apptsrp2CzMA3Y1Ni/pag4FTy9WSn3UHa3f/form" frameborder="0" width="100%" height="650" style="background: transparent;"></iframe> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/3">
+                    <div class="bg-blue-900 text-white p-12 rounded-[40px] shadow-2xl sticky top-24">
+                        <h3 class="text-3xl font-bold mb-8 italic font-serif text-orange-400">Payment Info</h3>
+                        <p class="text-blue-200 mb-10 leading-relaxed">A mandatory advance of <strong class="text-white">NPR 3,000</strong> is required to confirm your booking.</p>
+                        
+                        <div class="space-y-10">
+                            <div class="group">
+                                <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Bank Deposit (Nabil Bank)</p>
+                                <p class="text-2xl font-black tracking-tight mb-1">0210017550217</p>
+                                <p class="text-sm text-blue-200">Account Holder: Rikesh Koirala</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Digital Payment (eSewa)</p>
+                                <div class="flex items-center gap-4">
+                                    <span class="bg-white/10 px-4 py-2 rounded-xl text-lg font-bold">9841729236</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12 p-6 bg-white/5 rounded-2xl border border-white/10">
+                            <p class="text-xs leading-relaxed text-blue-300 italic">
+                                <i class="fas fa-camera mr-2"></i> IMPORTANT: WhatsApp a screenshot of your transaction to confirm your ID and meal preference.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>   
     </section>
 
-    <footer class="bg-slate-900 text-white py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
-                <p class="font-bold text-xl uppercase tracking-widest">MDM Mugling</p>
-                <p class="text-slate-400">© 2083 Wandering Trails Pvt. Ltd. All rights reserved.</p>
+ <section class="py-32 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-16 italic">Presented in Association With</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <div class="flex flex-col items-center gap-4">
+                    <img src="mdm.png" alt="MDM Mugling" class="h-16 w-auto object-contain">
+                    <p class="text-[10px] font-black text-slate-800 tracking-tighter uppercase">MDM Mugling</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="wondering.png" alt="Wandering Trails" class="h-16 w-auto object-contain">
+                    <p class="text-[10px] font-bold text-slate-500 italic">Wandering Trails</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="escapade-logo.png" alt="Escapade Nepal" class="h-16 w-auto object-contain">
+                    <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Escapade Nepal</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="uddeshya-logo.png" alt="Project Uddeshya" class="h-16 w-auto object-contain">
+                    <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Project Uddeshya</p>
+                </div>
+                <div class="flex flex-col items-center gap-4">
+                    <img src="galaxy.jpeg" alt="Project Uddeshya" class="h-16 w-auto object-contain">
+                    <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Galaxy Mattress</p>
+                </div>
             </div>
-            <div class="flex space-x-6 text-2xl">
-                <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section> 
+    
+    <section class="py-32 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-16 italic">Presented in Association With</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12 items-center opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                
+                <div class="flex flex-col items-center gap-4">
+                    <img src="mdm.png" alt="MDM Mugling" class="h-14 lg:h-16 w-auto object-contain">
+                    <p class="text-[9px] lg:text-[10px] font-black text-slate-800 tracking-tighter uppercase">MDM Mugling</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="wondering.png" alt="Wandering Trails" class="h-14 lg:h-16 w-auto object-contain">
+                    <p class="text-[9px] lg:text-[10px] font-bold text-slate-500 italic">Wandering Trails</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="escapade-logo.png" alt="Escapade Nepal" class="h-14 lg:h-16 w-auto object-contain">
+                    <p class="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-widest uppercase">Escapade Nepal</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="uddeshya-logo.png" alt="Project Uddeshya" class="h-14 lg:h-16 w-auto object-contain">
+                    <p class="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-widest uppercase">Project Uddeshya</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-4">
+                    <img src="galaxy.jpeg" alt="Galaxy Mattress" class="h-14 lg:h-16 w-auto object-contain">
+                    <p class="text-[9px] lg:text-[10px] font-bold text-slate-400 tracking-widest uppercase">Galaxy Mattress</p>
+                </div>
+
             </div>
+        </div>
+    </section>
+    
+    
+    <footer class="bg-slate-900 text-white py-24 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-20 items-start">
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-slate-900 text-xs font-black">MDM</span>
+                    </div>
+                    <p class="font-bold text-3xl tracking-tighter uppercase">Mugling</p>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed italic">"Join us where the waters meet for a new beginning."</p>
+            </div>
+            <div class="text-sm text-slate-400 space-y-4">
+                <p class="uppercase font-bold text-white tracking-widest mb-6">Quick Contacts</p>
+                <div class="flex items-center gap-3"><i class="fas fa-phone text-blue-500"></i> Rikesh: 9841729236</div>
+                <div class="flex items-center gap-3"><i class="fas fa-phone text-blue-500"></i> Suraj: 9811120755</div>
+                <div class="flex items-center gap-3"><i class="fas fa-envelope text-blue-500"></i> info@wanderingtrail.com</div>
+            </div>
+            <div class="flex md:justify-end space-x-8 text-3xl">
+                <a href="https://wa.me/9779841729236" class="hover:text-green-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-blue-400 transition duration-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-pink-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-24 pt-10 border-t border-white/5 text-[10px] uppercase tracking-widest text-slate-500">
+            © 2083 Wandering Trail Adventures Pvt. Ltd. Crafted for Excellence.
         </div>
     </footer>
 
