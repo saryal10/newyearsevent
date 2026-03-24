@@ -35,6 +35,10 @@
         }
 
         .itinerary-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+
+        @media (max-width: 640px) {
+            .responsive-qr { max-height: 100px; width: auto; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 scroll-smooth">
@@ -99,9 +103,11 @@
                 </p>
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Midnight Pool Party & Dancing Floor</div>
-                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Top Tier DJ</div>
-                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Adventure Sports</div>
-                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Luxury Dining</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Midnight Cocktail Toast & Sparkle</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Live DJ & Beach Bingo</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Riverside DJ Party</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> ATV & Rafting</div>
+                    <div class="flex items-center gap-3 text-slate-700 font-semibold"><i class="fas fa-check-circle text-orange-500"></i> Kayaking & Canyoning</div>
                 </div>
             </div>
             
@@ -151,13 +157,19 @@
                         <li class="relative">
                             <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
                             <span class="text-blue-400 font-bold block text-sm mb-1 uppercase tracking-tighter">05:00 PM onwards</span>
-                            <p class="text-lg text-slate-300">Live DJ Set, Poolside relaxation & Bonfire Storytelling.</p>
+                            <p class="text-lg text-slate-300">Live DJ Set, Poolside relaxation & Bonfire Storytelling and Dinner.</p>
+                            <p class="text-xs text-slate-500 italic mt-1">*Adventure activity sign-up sheets will be distributed during dinner.</p>
                         </li>
                         <li class="relative">
                             <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-orange-500 shadow-[0_0_20px_#f97316]"></span>
                             <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">12:00 AM</span>
                             <p class="text-2xl font-bold text-white">✨ MIDNIGHT COUNTDOWN</p>
                             <p class="text-slate-400 italic">Complimentary Cocktail Toast & Grand Sparkler Celebration</p>
+                        </li>
+                        <li class="relative">
+                            <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-700"></span>
+                            <span class="text-blue-400 font-bold block text-sm mb-1 uppercase tracking-tighter">12:30 AM</span>
+                            <p class="text-lg text-slate-300">Bar Close & Pack Up.</p>
                         </li>
                     </ul>
                 </div>
@@ -187,6 +199,9 @@
                             <span class="text-orange-400 font-bold block text-sm mb-1 uppercase tracking-tighter">11:00 AM</span>
                             <p class="text-lg text-white font-semibold">Adventure Phase Unleashed</p>
                             <p class="text-sm text-slate-400">Rafting, Kayaking, ATV Rides & Canyoning at Jalbire Waterfall.</p>
+                            <p class="text-xs text-orange-400/80 italic mt-2 leading-relaxed">
+                                Note: Adventures are self-paid and not included in the package. 
+                            </p>
                         </li>
                         <li class="relative">
                             <span class="absolute -left-[51px] top-1 w-5 h-5 rounded-full bg-slate-500"></span>
@@ -197,156 +212,152 @@
                 </div>
             </div>
         </div>
+    </section> 
+
+    <section id="pricing" class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-bold mb-4 text-center text-slate-800">Choose Your Package</h2>
+            <p class="text-center text-slate-500 mb-20 text-lg">Transparent pricing for the ultimate escape at Motel Du Mugling.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+                <div id="card-venue" onclick="selectPackage('venue', 3999, 'Venue Direct')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Venue Direct</h4>
+                    <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 3,999</p>
+                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Midnight Pool Party Access</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-glass-cheers text-green-500"></i> Champagne Toast & Sparklers</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-music text-green-500"></i> DJ Swechchha Live Set</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-water text-green-500"></i> Day 2 River Dip Challenge</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-times text-slate-300"></i> No Transport Included</li>
+                    </ul>
+                    <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
+                </div>
+
+                <div id="card-early" onclick="selectPackage('early', 5999, 'Early Departure')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
+                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Early Departure</h4>
+                    <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 5,999</p>
+                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
+                        <li class="flex items-center gap-3"><i class="fas fa-bus text-blue-500"></i> 09:00 AM Premium Transport</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-utensils text-blue-500"></i> Full Meal Plan (L/D/B)</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-fire text-blue-500"></i> Riverside Bonfire & BBQ</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-drafting-compass text-blue-500"></i> Rafting & Kayaking Access</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-cocktail text-blue-500"></i> Midnight Cocktail Included</li>
+                    </ul>
+                    <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
+                </div>
+            </div>
+
+            <div id="counter-section" class="mt-16 text-center hidden opacity-0 transition-all duration-500">
+                <p class="text-slate-800 font-bold mb-4 uppercase text-sm tracking-widest">How many people are coming?</p>
+                <div class="flex items-center justify-center gap-6">
+                    <button onclick="updateCount(-1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">-</button>
+                    <span id="people-count" class="text-5xl font-black text-blue-900 min-w-[60px]">1</span>
+                    <button onclick="updateCount(1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">+</button>
+                </div>
+            </div>
+
+            <div id="next-step-container" class="mt-16 text-center hidden opacity-0 transition-opacity duration-500">
+                <a href="#booking" onclick="generateSummary()" class="inline-block bg-orange-500 text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-orange-600 transition transform hover:scale-105">
+                    Continue to Booking &rarr;
+                </a>
+            </div>
+        </div>
     </section>
 
-   <section id="pricing" class="py-32 px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-5xl font-bold mb-4 text-center text-slate-800">Choose Your Package</h2>
-        <p class="text-center text-slate-500 mb-20 text-lg">Transparent pricing for the ultimate escape at Motel Du Mugling.</p>
-        
-        <div class="grid md:grid-cols-3 gap-8 items-stretch">
-            <div id="card-venue" onclick="selectPackage('venue', 3999, 'Venue Direct')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
-                <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Venue Direct</h4>
-                <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 3,999</p>
-                <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
-                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Midnight Pool Party Access</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-glass-cheers text-green-500"></i> Champagne Toast & Sparklers</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-music text-green-500"></i> DJ Swechchha Live Set</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-water text-green-500"></i> Day 2 River Dip Challenge</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-times text-slate-300"></i> No Transport Included</li>
-                </ul>
-                <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
-            </div>
-
-            <div id="card-early" onclick="selectPackage('early', 5999, 'Early Departure')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
-                <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Early Departure</h4>
-                <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 5,999</p>
-                <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
-                    <li class="flex items-center gap-3"><i class="fas fa-bus text-blue-500"></i> 09:00 AM Premium Transport</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-utensils text-blue-500"></i> Full Meal Plan (L/D/B)</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-fire text-blue-500"></i> Riverside Bonfire & BBQ</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-drafting-compass text-blue-500"></i> Rafting & Kayaking Access</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-cocktail text-blue-500"></i> Midnight Cocktail Included</li>
-                </ul>
-                <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
-            </div>
-
-            
-        </div>
-
-        <div id="counter-section" class="mt-16 text-center hidden opacity-0 transition-all duration-500">
-            <p class="text-slate-800 font-bold mb-4 uppercase text-sm tracking-widest">How many people are coming?</p>
-            <div class="flex items-center justify-center gap-6">
-                <button onclick="updateCount(-1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">-</button>
-                <span id="people-count" class="text-5xl font-black text-blue-900 min-w-[60px]">1</span>
-                <button onclick="updateCount(1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">+</button>
-            </div>
-        </div>
-
-        <div id="next-step-container" class="mt-16 text-center hidden opacity-0 transition-opacity duration-500">
-            <a href="#booking" onclick="generateSummary()" class="inline-block bg-orange-500 text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-orange-600 transition transform hover:scale-105">
-                Continue to Booking &rarr;
-            </a>
-        </div>
-    </div>
-</section> 
-<section id="booking" class="py-32 px-6 bg-slate-50">
-    <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
-            <div class="lg:w-2/3">
-                <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-100">
-                    <h2 class="text-4xl font-bold mb-4 tracking-tight">Secure Your Spot</h2>
-                    <p class="text-slate-500 mb-10 text-lg">Registration Deadline: <strong>05 April 2026</strong>.</p>
-                    <div class="bg-slate-50 rounded-[30px] overflow-hidden border border-slate-200">
-                        <iframe class="airtable-embed" src="https://airtable.com/embed/apptsrp2CzMA3Y1Ni/pag4FTy9WSn3UHa3f/form" frameborder="0" width="100%" height="650" style="background: transparent;"></iframe> 
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:w-1/3">
-                <div id="booking-summary" class="hidden bg-white p-8 rounded-[40px] border-2 border-orange-500 shadow-xl mb-8 transform transition-all">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Your Selection</h3>
-                    <div class="flex justify-between mb-2">
-                        <span id="summary-package-name" class="text-slate-500 italic">Package</span>
-                        <span id="summary-package-price" class="font-bold">NPR 0</span>
-                    </div>
-                    <div class="flex justify-between mb-4 pb-4 border-bottom border-slate-100">
-                        <span class="text-slate-500">Guests</span>
-                        <span id="summary-count" class="font-bold">x 1</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-4 border-t-2 border-dashed border-slate-200">
-                        <span class="text-lg font-bold">Total Amount</span>
-                        <span id="summary-total" class="text-2xl font-black text-orange-500">NPR 0</span>
-                    </div>
-                </div>
-
-                <div class="bg-blue-900 text-white p-12 rounded-[40px] shadow-2xl sticky top-24">
-                    <h3 class="text-3xl font-bold mb-8 italic font-serif text-orange-400">Payment Info</h3>
-                    <p class="text-blue-200 mb-10 leading-relaxed">A mandatory advance of <strong class="text-white">NPR 3,000</strong> is required per person.</p>
-                    <div class="space-y-10">
-                        <div class="group">
-                            <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Bank Deposit (Nabil Bank)</p>
-                            <p class="text-2xl font-black tracking-tight mb-1">0210017550217</p>
-                            <p class="text-sm text-blue-200">Account Holder: Rikesh Koirala</p>
+    <section id="booking" class="py-32 px-6 bg-slate-50 hidden opacity-0 transition-all duration-700">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
+                <div class="lg:w-2/3">
+                    <div class="bg-white p-12 rounded-[40px] shadow-sm border border-slate-100">
+                        <h2 class="text-4xl font-bold mb-4 tracking-tight">Secure Your Spot</h2>
+                        <p class="text-slate-500 mb-10 text-lg">Registration Deadline: <strong>05 April 2026</strong>.</p>
+                        <div class="bg-slate-50 rounded-[30px] overflow-hidden border border-slate-200">
+                            <iframe class="airtable-embed" src="https://airtable.com/embed/apptsrp2CzMA3Y1Ni/pag4FTy9WSn3UHa3f/form" frameborder="0" width="100%" height="650" style="background: transparent;"></iframe> 
                         </div>
-                        <div>
-                            <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Digital Payment (eSewa)</p>
-                            <span class="bg-white/10 px-4 py-2 rounded-xl text-lg font-bold">9841729236</span>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/3">
+                    <div id="booking-summary" class="hidden bg-white p-8 rounded-[40px] border-2 border-orange-500 shadow-xl mb-8 transform transition-all">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Your Selection</h3>
+                        <div class="flex justify-between mb-2">
+                            <span id="summary-package-name" class="text-slate-500 italic">Package</span>
+                            <span id="summary-package-price" class="font-bold">NPR 0</span>
+                        </div>
+                        <div class="flex justify-between mb-4 pb-4 border-bottom border-slate-100">
+                            <span class="text-slate-500">Guests</span>
+                            <span id="summary-count" class="font-bold">x 1</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-4 border-t-2 border-dashed border-slate-200">
+                            <span class="text-lg font-bold">Total Amount</span>
+                            <span id="summary-total" class="text-2xl font-black text-orange-500">NPR 0</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-900 text-white p-12 rounded-[40px] shadow-2xl sticky top-24">
+                        <h3 class="text-3xl font-bold mb-8 italic font-serif text-orange-400">Payment Info</h3>
+                        <p class="text-blue-200 mb-10 leading-relaxed">A mandatory advance of <strong class="text-white">NPR 3,000</strong> is required per person.</p>
+                        <div class="space-y-12">
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-6 group">
+                                <div class="flex-grow">
+                                    <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Bank Deposit (Nabil Bank)</p>
+                                    <p class="text-2xl font-black tracking-tight mb-1">0210017550217</p>
+                                    <p class="text-sm text-blue-200">Account Holder: Rikesh Koirala</p>
+                                </div>
+                                <div class="flex-shrink-0 bg-white p-2 rounded-2xl shadow-lg transform transition-transform group-hover:scale-105 text-center">
+                                    <img src="nabil.png" alt="Nabil Bank QR" class="responsive-qr h-24 w-auto object-contain">
+                                    <p class="text-[7px] text-slate-800 font-black mt-1 opacity-50 uppercase tracking-tighter">Nabil QR</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-6 group">
+                                <div class="flex-grow">
+                                    <p class="text-[10px] text-blue-400 uppercase tracking-[0.25em] mb-2 font-bold">Digital Payment (eSewa)</p>
+                                    <span class="bg-white/10 px-4 py-2 rounded-xl text-lg font-bold block w-fit">9841729236</span>
+                                </div>
+                                <div class="flex-shrink-0 bg-white p-2 rounded-2xl shadow-lg transform transition-transform group-hover:scale-105 text-center">
+                                    <img src="esewa.png" alt="eSewa QR" class="responsive-qr h-24 w-auto object-contain">
+                                    <p class="text-[7px] text-slate-800 font-black mt-1 opacity-50 uppercase tracking-tighter">eSewa QR</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-    
-    
-    
+    </section>
 
-   
-   
     <section class="py-32 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="text-xs uppercase tracking-[0.5em] text-slate-400 font-bold mb-16 italic">Presented in Association With</p>
-            
             <div class="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-10 items-center transition duration-500">
-                
                 <div class="flex flex-col items-center gap-4">
                     <img src="mdm.png" alt="MDM Mugling" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-black text-slate-800 tracking-tighter uppercase">MDM Mugling</p>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <img src="wondering.png" alt="Wandering Trails" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-bold text-slate-500 italic">Wandering Trails</p>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <img src="escapade.jpeg" alt="Escapade Nepal" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Escapade Nepal</p>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <img src="project.jpeg" alt="Project Uddeshya" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Project Uddeshya</p>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <img src="galaxy.jpeg" alt="Galaxy Mattress" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Galaxy Mattress</p>
                 </div>
-
                 <div class="flex flex-col items-center gap-4">
                     <img src="shreeban.jpeg" alt="Shreeban Nature Camp" class="h-12 md:h-14 w-auto object-contain">
                     <p class="text-[8px] md:text-[9px] font-bold text-slate-400 tracking-widest uppercase">Shreeban Nature Camp</p>
                 </div>
-
             </div>
         </div>
-    </section>    
-
-
-
+    </section>
 
     <footer class="bg-slate-900 text-white py-24 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-20 items-start">
@@ -375,95 +386,76 @@
             © 2083 Wandering Trail Adventures Pvt. Ltd. Crafted for Excellence.
         </div>
     </footer>
+    
+    <script>
+        let selectedPrice = 0;
+        let selectedName = "";
+        let guestCount = 1;
 
-<script>
-    // Global variables to track user selection
-    let selectedPrice = 0;
-    let selectedName = "";
-    let guestCount = 1;
+        function selectPackage(type, price, name) {
+            selectedPrice = price;
+            selectedName = name;
 
-    function selectPackage(type, price, name) {
-        // Save selection to global variables
-        selectedPrice = price;
-        selectedName = name;
-
-        // 1. Clear previous selections from all cards
-        const allCards = document.querySelectorAll('.pricing-card');
-        allCards.forEach(card => {
-            // Reset card container styles
-            card.classList.remove('bg-blue-900', 'text-white', 'scale-105', 'z-10', 'shadow-2xl', 'shadow-blue-200', 'border-orange-500');
-            card.classList.add('bg-slate-50', 'text-slate-800');
-            
-            // Reset Text and Icons within the card
-            const priceText = card.querySelector('.price-text');
-            if(priceText) priceText.classList.replace('text-white', 'text-slate-800');
-            
-            card.querySelectorAll('ul li').forEach(li => {
-                li.classList.remove('text-blue-100');
-                li.classList.add('text-slate-600');
+            const allCards = document.querySelectorAll('.pricing-card');
+            allCards.forEach(card => {
+                card.classList.remove('bg-blue-900', 'text-white', 'scale-105', 'z-10', 'shadow-2xl', 'shadow-blue-200', 'border-orange-500');
+                card.classList.add('bg-slate-50', 'text-slate-800');
+                const priceText = card.querySelector('.price-text');
+                if(priceText) priceText.classList.replace('text-white', 'text-slate-800');
+                card.querySelectorAll('ul li').forEach(li => {
+                    li.classList.remove('text-blue-100');
+                    li.classList.add('text-slate-600');
+                });
+                const status = card.querySelector('.select-status');
+                status.innerHTML = 'Click to Select &rarr;';
+                status.classList.remove('text-white');
+                status.classList.add('text-blue-900');
             });
-            
-            // Reset Status Label
-            const status = card.querySelector('.select-status');
-            status.innerHTML = 'Click to Select &rarr;';
-            status.classList.remove('text-white');
-            status.classList.add('text-blue-900');
-        });
 
-        // 2. Highlight the newly selected card
-        const selectedCard = document.getElementById('card-' + type);
-        selectedCard.classList.remove('bg-slate-50', 'text-slate-800');
-        selectedCard.classList.add('bg-blue-900', 'text-white', 'scale-105', 'z-10', 'shadow-2xl', 'shadow-blue-200', 'border-orange-500');
-        
-        // Highlight Price and Icons inside selected card
-        const selectedPriceText = selectedCard.querySelector('.price-text');
-        if(selectedPriceText) selectedPriceText.classList.replace('text-slate-800', 'text-white');
-        
-        selectedCard.querySelectorAll('ul li').forEach(li => {
-            li.classList.remove('text-slate-600');
-            li.classList.add('text-blue-100');
-        });
+            const selectedCard = document.getElementById('card-' + type);
+            selectedCard.classList.remove('bg-slate-50', 'text-slate-800');
+            selectedCard.classList.add('bg-blue-900', 'text-white', 'scale-105', 'z-10', 'shadow-2xl', 'shadow-blue-200', 'border-orange-500');
+            const selectedPriceText = selectedCard.querySelector('.price-text');
+            if(selectedPriceText) selectedPriceText.classList.replace('text-slate-800', 'text-white');
+            selectedCard.querySelectorAll('ul li').forEach(li => {
+                li.classList.remove('text-slate-600');
+                li.classList.add('text-blue-100');
+            });
+            const selectedStatus = selectedCard.querySelector('.select-status');
+            selectedStatus.innerHTML = 'Selected Package ✓';
+            selectedStatus.classList.remove('text-blue-900');
+            selectedStatus.classList.add('text-white');
 
-        // Update Status Label to "Selected"
-        const selectedStatus = selectedCard.querySelector('.select-status');
-        selectedStatus.innerHTML = 'Selected Package ✓';
-        selectedStatus.classList.remove('text-blue-900');
-        selectedStatus.classList.add('text-white');
+            const counterSec = document.getElementById('counter-section');
+            const nextBtn = document.getElementById('next-step-container');
+            counterSec.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            setTimeout(() => {
+                counterSec.classList.add('opacity-100');
+                nextBtn.classList.add('opacity-100');
+            }, 10);
+        }
 
-        // 3. Reveal the Guest Counter and Continue Button
-        const counterSec = document.getElementById('counter-section');
-        const nextBtn = document.getElementById('next-step-container');
-        
-        counterSec.classList.remove('hidden');
-        nextBtn.classList.remove('hidden');
-        
-        // Brief timeout to allow CSS transitions to trigger
-        setTimeout(() => {
-            counterSec.classList.add('opacity-100');
-            nextBtn.classList.add('opacity-100');
-        }, 10);
-    }
+        function updateCount(change) {
+            guestCount = Math.max(1, guestCount + change);
+            document.getElementById('people-count').innerText = guestCount;
+        }
 
-    // Function to handle + and - buttons
-    function updateCount(change) {
-        guestCount = Math.max(1, guestCount + change); // Prevents going below 1
-        document.getElementById('people-count').innerText = guestCount;
-    }
-
-    // Function to build the summary above payment info
-    function generateSummary() {
-        const summaryCard = document.getElementById('booking-summary');
-        summaryCard.classList.remove('hidden');
-
-        // Update the text fields in the summary UI
-        document.getElementById('summary-package-name').innerText = selectedName;
-        document.getElementById('summary-package-price').innerText = 'NPR ' + selectedPrice.toLocaleString();
-        document.getElementById('summary-count').innerText = 'x ' + guestCount;
-        
-        // Calculate and display total
-        const total = selectedPrice * guestCount;
-        document.getElementById('summary-total').innerText = 'NPR ' + total.toLocaleString();
-    }
-</script> 
+        function generateSummary() {
+            const bookingSection = document.getElementById('booking');
+            const summaryCard = document.getElementById('booking-summary');
+            bookingSection.classList.remove('hidden');
+            summaryCard.classList.remove('hidden');
+            setTimeout(() => {
+                bookingSection.classList.add('opacity-100');
+                bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 50);
+            document.getElementById('summary-package-name').innerText = selectedName;
+            document.getElementById('summary-package-price').innerText = 'NPR ' + selectedPrice.toLocaleString();
+            document.getElementById('summary-count').innerText = 'x ' + guestCount;
+            const total = selectedPrice * guestCount;
+            document.getElementById('summary-total').innerText = 'NPR ' + total.toLocaleString();
+        }
+    </script>
 </body>
 </html>
