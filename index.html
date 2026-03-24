@@ -215,54 +215,89 @@
     </section> 
 
     <section id="pricing" class="py-32 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl font-bold mb-4 text-center text-slate-800">Choose Your Package</h2>
-            <p class="text-center text-slate-500 mb-20 text-lg">Transparent pricing for the ultimate escape at Motel Du Mugling.</p>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
-                <div id="card-venue" onclick="selectPackage('venue', 3999, 'Venue Direct')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
-                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Venue Direct</h4>
-                    <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 3,999</p>
-                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
-                        <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Midnight Pool Party Access</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-glass-cheers text-green-500"></i> Champagne Toast & Sparklers</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-music text-green-500"></i> DJ Swechchha Live Set</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-water text-green-500"></i> Day 2 River Dip Challenge</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-times text-slate-300"></i> No Transport Included</li>
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-5xl font-bold mb-4 text-center text-slate-800">Choose Your Package</h2>
+        <p class="text-center text-slate-500 mb-20 text-lg">Transparent pricing for the ultimate escape at Motel Du Mugling.</p>
+        
+        <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+            <div id="card-venue" onclick="selectPackage('venue', 3999, 'Venue Direct')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
+                <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Venue Direct</h4>
+                <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 3,999</p>
+                
+                <div class="mb-6">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-blue-600 mb-3">Package Includes:</p>
+                    <ul class="space-y-3 text-slate-600 text-sm flex-grow">
+                        <li class="flex items-start gap-3"><i class="fas fa-utensils text-green-500 mt-1"></i> 1 Lunch, 1 Dinner & 1 Breakfast</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-bed text-green-500 mt-1"></i> Shared Accommodation</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-glass-cheers text-green-500 mt-1"></i> Free Cocktail Toast & Sparkler</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-music text-green-500 mt-1"></i> Live DJ & Pool Party</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-fire text-green-500 mt-1"></i> Bonfire & Storytelling Night</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-sun text-green-500 mt-1"></i> Riverside Breakfast Experience</li>
+                        <li class="flex items-start gap-3"><span>🎧</span> Riverside Live DJ</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-gamepad text-green-500 mt-1"></i> Beach Bingo & Fun Games</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-swimming-pool text-green-500 mt-1"></i> Swimming Pool Party</li>
                     </ul>
-                    <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
                 </div>
 
-                <div id="card-early" onclick="selectPackage('early', 5999, 'Early Departure')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
-                    <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Early Departure</h4>
-                    <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 5,999</p>
-                    <ul class="space-y-5 text-slate-600 mb-12 flex-grow">
-                        <li class="flex items-center gap-3"><i class="fas fa-bus text-blue-500"></i> 09:00 AM Premium Transport</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-utensils text-blue-500"></i> Full Meal Plan (L/D/B)</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-fire text-blue-500"></i> Riverside Bonfire & BBQ</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-drafting-compass text-blue-500"></i> Rafting & Kayaking Access</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-cocktail text-blue-500"></i> Midnight Cocktail Included</li>
+                <div class="pt-6 border-t border-slate-200 mt-auto">
+                    <p class="text-[10px] font-bold uppercase text-slate-400 mb-2">Package Excludes:</p>
+                    <ul class="space-y-1 text-[11px] text-slate-500 italic">
+                        <li>• Personal expenses</li>
+                        <li>• Services not mentioned in inclusions</li>
                     </ul>
-                    <div class="select-status font-bold text-blue-900">Click to Select &rarr;</div>
                 </div>
+
+                <div class="select-status font-bold text-blue-900 mt-8">Click to Select &rarr;</div>
             </div>
 
-            <div id="counter-section" class="mt-16 text-center hidden opacity-0 transition-all duration-500">
-                <p class="text-slate-800 font-bold mb-4 uppercase text-sm tracking-widest">How many people are coming?</p>
-                <div class="flex items-center justify-center gap-6">
-                    <button onclick="updateCount(-1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">-</button>
-                    <span id="people-count" class="text-5xl font-black text-blue-900 min-w-[60px]">1</span>
-                    <button onclick="updateCount(1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">+</button>
+            <div id="card-early" onclick="selectPackage('early', 5999, 'Early Departure')" class="pricing-card cursor-pointer bg-slate-50 p-12 rounded-[40px] border-2 border-transparent flex flex-col transition-all duration-300 shadow-sm">
+                <h4 class="font-bold text-slate-400 mb-2 uppercase text-xs tracking-[0.2em]">Early Departure</h4>
+                <p class="price-text text-4xl font-black mb-8 text-slate-800">NPR 5,999</p>
+                
+                <div class="mb-6">
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-orange-600 mb-3">Package Includes:</p>
+                    <ul class="space-y-3 text-slate-600 text-sm flex-grow">
+                        <li class="flex items-start gap-3"><i class="fas fa-utensils text-blue-500 mt-1"></i> 2 Lunch, 1 Dinner & 1 Breakfast</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-bus text-blue-500 mt-1"></i> Private Transport (KTM – Mugling – KTM)</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-bed text-blue-500 mt-1"></i> Shared Accommodation</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-glass-cheers text-blue-500 mt-1"></i> Free Cocktail Toast & Sparkler</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-music text-blue-500 mt-1"></i> Live DJ & Pool Party</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-fire text-blue-500 mt-1"></i> Bonfire & Storytelling Night</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-sun text-blue-500 mt-1"></i> Riverside Breakfast Experience</li>
+                        <li class="flex items-start gap-3"><span>🎧</span> Riverside Live DJ</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-gamepad text-blue-500 mt-1"></i> Beach Bingo & Fun Games</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-swimming-pool text-blue-500 mt-1"></i> Swimming Pool Party</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div id="next-step-container" class="mt-16 text-center hidden opacity-0 transition-opacity duration-500">
-                <a href="#booking" onclick="generateSummary()" class="inline-block bg-orange-500 text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-orange-600 transition transform hover:scale-105">
-                    Continue to Booking &rarr;
-                </a>
+                <div class="pt-6 border-t border-slate-200 mt-auto">
+                    <p class="text-[10px] font-bold uppercase text-slate-400 mb-2">Package Excludes:</p>
+                    <ul class="space-y-1 text-[11px] text-slate-500 italic">
+                        <li>• Personal expenses</li>
+                        <li>• Services not mentioned in inclusions</li>
+                    </ul>
+                </div>
+
+                <div class="select-status font-bold text-blue-900 mt-8">Click to Select &rarr;</div>
             </div>
         </div>
-    </section>
+
+        <div id="counter-section" class="mt-16 text-center hidden opacity-0 transition-all duration-500">
+            <p class="text-slate-800 font-bold mb-4 uppercase text-sm tracking-widest">How many people are coming?</p>
+            <div class="flex items-center justify-center gap-6">
+                <button onclick="updateCount(-1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">-</button>
+                <span id="people-count" class="text-5xl font-black text-blue-900 min-w-[60px]">1</span>
+                <button onclick="updateCount(1)" class="w-14 h-14 rounded-full border-2 border-slate-200 text-2xl font-bold hover:bg-slate-100">+</button>
+            </div>
+        </div>
+
+        <div id="next-step-container" class="mt-16 text-center hidden opacity-0 transition-opacity duration-500">
+            <a href="#booking" onclick="generateSummary()" class="inline-block bg-orange-500 text-white px-12 py-5 rounded-full font-bold text-xl shadow-xl hover:bg-orange-600 transition transform hover:scale-105">
+                Continue to Booking &rarr;
+            </a>
+        </div>
+    </div>
+</section>
 
     <section id="booking" class="py-32 px-6 bg-slate-50 hidden opacity-0 transition-all duration-700">
         <div class="max-w-7xl mx-auto">
